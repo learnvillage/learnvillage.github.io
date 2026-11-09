@@ -1,0 +1,15 @@
+# 系統與編輯器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Claude Code 個人設定（launch.json 保留，方便本機預覽）
+.claude/settings.local.json
+
+# Node（目前只用來跑 tools/check.mjs）
+node_modules/
+
+# 機密：任何 .env 都不要上傳
+.env
+.env.*

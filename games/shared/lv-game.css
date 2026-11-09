@@ -1,0 +1,104 @@
+/* 教材共用樣式（教材在 iframe 內，所以要自己載入 tokens.css） */
+html, body { margin: 0; }
+body {
+  font-family: var(--font);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  line-height: 1.7;
+  --g: var(--c-primary);
+  --g-dark: var(--c-primary-dark);
+  --g-soft: var(--c-primary-soft);
+}
+body[data-theme="scratch"] { --g: var(--c-scratch); --g-dark: var(--c-scratch-ink); --g-soft: var(--c-scratch-soft); }
+body[data-theme="python"] { --g: var(--c-python); --g-dark: var(--c-python-ink); --g-soft: var(--c-python-soft); }
+body[data-theme="logic"] { --g: var(--c-logic); --g-dark: var(--c-logic-ink); --g-soft: var(--c-logic-soft); }
+*, *::before, *::after { box-sizing: border-box; }
+
+.g { max-width: 720px; margin: 0 auto; padding: 16px 16px 48px; }
+.g-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.g-label { color: var(--g-dark); }
+.g-dots { display: flex; gap: 8px; }
+.g-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--c-line); }
+.g-dot.done { background: var(--g); }
+.g-dot.now { background: #fff; border: 4px solid var(--g); }
+
+.g-card { background: #fff; border: 2px solid var(--c-line); border-radius: 20px; padding: 24px; }
+.g-intro, .g-finish { text-align: center; }
+.g-badge { display: inline-block; background: var(--g-soft); color: var(--g-dark); font-weight: 800; border-radius: 999px; padding: 2px 14px; font-size: 0.9rem; }
+.g-badge:empty { display: none; }
+.g-h1 { font-size: 1.8rem; line-height: 1.3; margin: 10px 0; }
+.g-h2 { font-size: 1.35rem; line-height: 1.35; margin: 0 0 8px; }
+.g-lead { font-size: 1.1rem; color: var(--c-muted); }
+.g-list { display: inline-block; text-align: left; margin: 4px 0 8px; padding-left: 1.2em; }
+.g-meta { color: var(--c-muted); font-size: 0.9rem; }
+.g-goal { margin: 0 0 12px; color: var(--c-muted); }
+.g-body p { margin: 0 0 0.8em; }
+.g-body svg { margin: 8px auto; }
+.g-stars { font-size: 2.6rem; color: #f5a400; letter-spacing: 0.1em; }
+
+.g-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.g-actions--center { justify-content: center; }
+.g-btn {
+  min-height: 48px; padding: 0 22px; border-radius: 999px; border: 2px solid var(--g);
+  background: var(--g); color: #fff; font: inherit; font-weight: 800; cursor: pointer;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+.g-btn:active { transform: translateY(1px); }
+.g-btn--big { padding: 0 30px; font-size: 1.05rem; }
+.g-btn--ghost { background: #fff; color: var(--c-ink); border-color: var(--c-line); box-shadow: none; }
+.g-btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+.g-btn[hidden], .g-hint[hidden] { display: none; }
+button:focus-visible { outline: 3px solid var(--c-accent); outline-offset: 2px; }
+
+.g-stage { margin: 8px 0; }
+.g-msg { min-height: 1.7em; margin: 10px 0 0; font-weight: 700; }
+.g-msg.ok { color: #11743f; }
+.g-msg.bad { color: var(--c-err); }
+.g-msg.warn { color: var(--c-warn); }
+.g-hint { background: var(--c-accent-soft); border-radius: 12px; padding: 10px 14px; margin-top: 10px; }
+
+/* ===== 概念頁的小積木示意 ===== */
+.demo-blk { display: inline-block; background: var(--g); color: #fff; font-weight: 800; border-radius: 10px; padding: 4px 12px; margin: 2px; }
+.demo-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
+
+/* ===== 方格遊戲 ===== */
+.gg-board { display: grid; grid-template-columns: auto calc(var(--w) * var(--cell)); grid-template-rows: calc(var(--h) * var(--cell)) auto; gap: 4px 8px; justify-content: center; margin: 4px 0 8px; }
+.gg-y { display: grid; grid-template-rows: repeat(var(--h), var(--cell)); align-items: center; justify-items: end; color: var(--c-muted); font-weight: 700; }
+.gg-x { display: grid; grid-template-columns: repeat(var(--w), var(--cell)); justify-items: center; color: var(--c-muted); font-weight: 700; }
+.gg-field { position: relative; display: grid; grid-template-columns: repeat(var(--w), var(--cell)); grid-template-rows: repeat(var(--h), var(--cell)); border: 3px solid var(--c-ink); border-radius: 10px; background: #fff; overflow: hidden; }
+.gg-cell { border: 1px solid #eee8da; display: grid; place-items: center; transition: background 0.2s; }
+.gg-cell.trail { background: var(--g-soft); }
+.gg-cell.wall { background: repeating-linear-gradient(45deg, #6b5a49, #6b5a49 6px, #7b6955 6px, #7b6955 12px); border-color: #5a4b3c; }
+.gg-cell.goal::after { content: "★"; color: #f5a400; font-size: calc(var(--cell) * 0.7); line-height: 1; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15); }
+.gg-hero { position: absolute; left: 0; top: 0; width: var(--cell); height: var(--cell); display: grid; place-items: center; transition: transform 0.3s ease; z-index: 2; }
+.gg-hero i { position: relative; width: 70%; height: 70%; border-radius: 50%; background: var(--g); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18); }
+.gg-hero i::before, .gg-hero i::after { content: ""; position: absolute; top: 30%; width: 16%; height: 16%; background: #fff; border-radius: 50%; box-shadow: inset 0 0 0 2px #1e2a32; }
+.gg-hero i::before { left: 24%; }
+.gg-hero i::after { right: 24%; }
+.gg-readout { text-align: center; margin: 4px 0 10px; font-weight: 700; font-size: 0.95rem; }
+.gg-label { margin: 12px 0 6px; font-weight: 800; color: var(--g-dark); display: flex; justify-content: space-between; gap: 8px; }
+.gg-count { font-weight: 600; color: var(--c-muted); }
+.gg-palette { display: flex; flex-wrap: wrap; gap: 8px; }
+.blk { min-height: 48px; padding: 0 16px; border: 0; border-radius: 12px; background: var(--g); color: #fff; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 3px 0 rgba(0, 0, 0, 0.22); }
+.blk:active { transform: translateY(1px); }
+.blk:disabled { opacity: 0.55; cursor: not-allowed; }
+.gg-prog { list-style: none; margin: 0; padding: 10px; min-height: 64px; display: flex; flex-wrap: wrap; gap: 6px; background: #fff; border: 2px dashed var(--c-line); border-radius: 14px; }
+.blk--prog { min-height: 40px; padding: 0 12px; font-size: 0.95rem; }
+.blk--prog.active { outline: 3px solid var(--c-accent); outline-offset: 1px; }
+.gg-empty { color: var(--c-muted); align-self: center; list-style: none; }
+
+/* ===== 題目 ===== */
+.q-prompt { font-size: 1.1rem; font-weight: 700; margin: 0 0 12px; }
+.q-code { background: #1e2a32; color: #f3f6f8; border-radius: 12px; padding: 14px 16px; margin: 0 0 14px; overflow-x: auto; font-family: var(--font-mono); font-size: 1rem; line-height: 1.6; }
+.q-code code { font-family: inherit; white-space: pre; }
+.q-options { display: grid; gap: 10px; }
+.q-opt, .q-item { min-height: 52px; padding: 8px 16px; border-radius: 14px; border: 2px solid var(--c-line); background: #fff; font: inherit; font-weight: 700; text-align: left; cursor: pointer; color: var(--c-ink); }
+.q-opt:hover:not(:disabled), .q-item:hover:not(:disabled) { border-color: var(--g); }
+.q-opt.ok { background: #d9f4e3; border-color: var(--c-ok); }
+.q-opt.bad { background: #fde3e3; border-color: var(--c-err); text-decoration: line-through; }
+.q-opt:disabled:not(.ok):not(.bad) { opacity: 0.6; }
+.q-pool { display: grid; gap: 8px; min-height: 52px; }
+.q-line { list-style: decimal; margin: 0; padding: 10px 10px 10px 36px; display: grid; gap: 8px; background: #fff; border: 2px dashed var(--c-line); border-radius: 14px; min-height: 64px; }
+.q-line .gg-empty { list-style: none; margin-left: -26px; }
+.q-item--set { background: var(--g-soft); border-color: var(--g); width: 100%; }
+.q-item:disabled { cursor: default; }

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "course-001",
+    "title": "Scratch 入門體驗課",
+    "teacher_id": "teacher-001",
+    "audience": "國小中高年級",
+    "duration_minutes": 60,
+    "format": "online_1on1",
+    "platform": "Google Meet",
+    "outline": ["認識舞台與角色", "座標與移動", "用邏輯思考排出路線", "完成一個小遊戲"],
+    "price_twd": 0,
+    "material_ids": ["scratch-001", "logic-001"],
+    "status": "published"
+  },
+  {
+    "id": "course-002",
+    "title": "Python 變數初體驗",
+    "teacher_id": "teacher-001",
+    "audience": "國小高年級到國中",
+    "duration_minutes": 60,
+    "format": "online_1on1",
+    "platform": "Google Meet",
+    "outline": ["認識變數", "用 print 讓電腦說話", "小挑戰：自己設計一句話"],
+    "price_twd": 0,
+    "material_ids": ["python-001"],
+    "status": "published"
+  }
+]

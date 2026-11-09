@@ -1,0 +1,26 @@
+[
+  {
+    "id": "teacher-001",
+    "display_name": "小黑老師",
+    "avatar": null,
+    "headline": "用遊戲學會 Scratch 與程式邏輯",
+    "bio": "【範例文字，請改成你自己的介紹】我喜歡把抽象的程式概念做成可以動手玩的小遊戲，讓孩子在「玩」的過程中自然學會。",
+    "specialties": ["Scratch", "Python 入門", "程式邏輯"],
+    "age_groups": ["國小中高年級", "國中"],
+    "teaching_style": "【範例】先玩、再講、最後自己做；每堂課都有一個能帶走的小作品。",
+    "roles": ["teacher", "creator"],
+    "status": "published"
+  },
+  {
+    "id": "teacher-002",
+    "display_name": "（範例）合作教師 B",
+    "avatar": null,
+    "headline": "這是尚未上線的範本，把 status 改成 published 才會顯示",
+    "bio": "【範本】複製這一筆就能新增教師。審核通過後再把 status 改成 published。",
+    "specialties": ["Python 入門"],
+    "age_groups": ["國中"],
+    "teaching_style": "【範本】",
+    "roles": ["teacher"],
+    "status": "draft"
+  }
+]

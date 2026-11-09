@@ -1,0 +1,80 @@
+[
+  {
+    "id": "scratch-001",
+    "title": "角色移動與座標",
+    "category": "Scratch",
+    "level": "beginner",
+    "type": "interactive",
+    "author_id": "teacher-001",
+    "description": "用 x、y 座標指揮角色，一步一步走到終點。",
+    "learning_goals": [
+      "看懂 (x, y) 座標代表的位置",
+      "知道 x 管左右、y 管上下",
+      "用積木排出走到終點的路線"
+    ],
+    "prerequisites": [],
+    "estimated_minutes": 10,
+    "tags": ["Scratch", "座標", "入門", "移動"],
+    "cover": null,
+    "cover_label": "x , y",
+    "play_path": "games/scratch/scratch-001/index.html",
+    "license": "原創，保留權利（開放個人學習使用）",
+    "version": "1.0.0",
+    "original_material_id": null,
+    "status": "published",
+    "created_at": "2026-11-06",
+    "updated_at": "2026-11-06"
+  },
+  {
+    "id": "logic-001",
+    "title": "順序、條件與迴圈",
+    "category": "程式邏輯",
+    "level": "beginner",
+    "type": "interactive",
+    "author_id": "teacher-001",
+    "description": "不用電腦也能練習：排步驟、做判斷、數重複。",
+    "learning_goals": [
+      "知道步驟的順序會影響結果",
+      "看懂「如果……就……，否則……」",
+      "數得出迴圈會重複幾次"
+    ],
+    "prerequisites": [],
+    "estimated_minutes": 8,
+    "tags": ["程式邏輯", "順序", "條件", "迴圈", "入門"],
+    "cover": null,
+    "cover_label": "1 · 2 · 3",
+    "play_path": "games/logic/logic-001/index.html",
+    "license": "原創，保留權利（開放個人學習使用）",
+    "version": "1.0.0",
+    "original_material_id": null,
+    "status": "published",
+    "created_at": "2026-11-06",
+    "updated_at": "2026-11-06"
+  },
+  {
+    "id": "python-001",
+    "title": "變數與 print",
+    "category": "Python",
+    "level": "beginner",
+    "type": "interactive",
+    "author_id": "teacher-001",
+    "description": "認識變數這個「貼了名字的盒子」，並預測 print 會印出什麼。",
+    "learning_goals": [
+      "知道變數可以存放資料並取名字",
+      "會用 print() 把結果印出來",
+      "能預測簡單程式的輸出"
+    ],
+    "prerequisites": [],
+    "estimated_minutes": 10,
+    "tags": ["Python", "變數", "print", "入門"],
+    "cover": null,
+    "cover_label": "x = 5",
+    "play_path": "games/python/python-001/index.html",
+    "license": "原創，保留權利（開放個人學習使用）",
+    "version": "1.0.0",
+    "original_material_id": null,
+    "status": "published",
+    "created_at": "2026-11-06",
+    "updated_at": "2026-11-06"
+  }
+]
